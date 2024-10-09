@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+require('dotenv').config();
 const http = require('http');
 const socketIO = require('socket.io');
 const server = http.createServer(app);
@@ -66,4 +67,4 @@ const indexRouter = require('./routes/index');
 
 app.use('/',indexRouter);
 
-server.listen(3000);
+server.listen(process.env.PORT || 3000);
